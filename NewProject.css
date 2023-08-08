@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,500;0,600;0,800;0,1000;1,700&display=swap');
+
+/*---------------------- All ---------------------------*/
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*---------------------- root ---------------------------*/
+:root {
+    /* ---- Colors ---- */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #ff7e27;
+    --seconde-color: #feb25c;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+
+    /* ---- Transition ---- */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+/*---------------------- Body ---------------------------*/
+
+body {
+    height: 100vh;
+    background: var(--body-color);
+    transition: var(--tran-04);
+}
+
+body.dark {
+    --body-color: #18191A;
+    --sidebar-color: #242526;
+    --primary-color: #3A3B3C;
+    --seconde-color: #feb25c;
+    --primary-color-light: #3A3B3C;
+    --toggle-color: #FFF;
+    --text-color: #CCC;
+}
+
+/*---------------------- Resuable Css ---------------------------*/
+
+.sidebar .text {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: var(--tran-04);
+    white-space: nowrap;
+}
+
+.sidebar.close .text{
+    opacity: 0;
+}
+
+.sidebar .name {
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--tran-05);
+    white-space: nowrap;
+}
+/*-------------------------------*/
+.sidebar .name .Po{
+    transition: var(--tran-05);
+    font-size: 25px;
+}
+.sidebar .name .ro{
+    transition: var(--tran-05);
+    font-size: 25px;
+}
+.sidebar .name .oo{
+    transition: var(--tran-05);
+    font-size: 25px;
+}
+.sidebar .name .jo{
+    transition: var(--tran-5);
+    font-size: 25px;
+}
+.sidebar .name .eo{
+    transition: var(--tran-05);
+    font-size: 25px;
+}
+.sidebar .name .co{
+    transition: var(--tran-05);
+    font-size: 25px;
+}
+.sidebar .name .to{
+    transition: var(--tran-05);
+    font-size: 25px;
+}
+/*-------------------------------*/
+.sidebar.close .name .Po{
+    padding-left: 15px;
+    font-size: 25px;
+}
+.sidebar.close .name .ro{
+    opacity: 0;
+    font-size: 0px;
+}
+.sidebar.close .name .oo{
+    opacity: 0;
+    font-size: 15px;
+}
+.sidebar.close .name .jo{
+    right: 5px;
+    font-size: 25px;
+}
+.sidebar.close .name .eo{
+    opacity: 0;
+    font-size: 0px;
+}
+.sidebar.close .name .co{
+    opacity: 0;
+    font-size: 0px;
+}
+.sidebar.close .name .to{
+    opacity: 0;
+    font-size: 0px;
+}
+/*-------------------------------*/
+.sidebar .name-name {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .profession {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+/*---------------------- Sidebar ---------------------------*/
+
+.sidebar {
+    box-shadow: 0px 0px 20px rgb(12, 12, 12);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;
+}
+
+.sidebar.close {
+    width: 88px;
+}
+
+.sidebar li {
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    font-size: 20px;
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+    color: var(--text-color);
+    transition: var(--tran-02);
+}
+
+.sidebar header {
+    position: relative;
+}
+
+.sidebar .name-text h1 {
+    margin-right: 0.2px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: #ff7e27;
+    width: 100%;
+}
+
+.sidebar header .name-text {
+    display: flex;
+    align-items: center;
+}
+
+head .name-text .header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-text .name-name {
+    font-weight: 1000;
+    white-space: nowrap;
+    transition: var(--tran-05);
+}
+
+.header-text .profession {
+    margin-top: -2px;
+}
+
+.sidebar header .toggle {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 22px;
+    transition: var(--tran-04);
+}
+
+.sidebar.close header .toggle {
+    transform: translateY(-50%);
+}
+
+body.dark .sidebar.close header .toggle {
+    color: var(--text-color);
+}
+
+.sidebar .search-box {
+    border-radius: 10px;
+    background: var(--primary-color-light);
+    transition: var(--tran-05);
+}
+
+.search-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    justify-content: center;
+    background: var(--primary-color-light);
+    transition: var(--tran-05);
+}
+
+.sidebar li a { 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: var(--tran-04);
+}
+
+.sidebar li a:hover {
+    transform: translateX(10px);
+    box-shadow: -10px 10px 10px rgb(173, 173, 173);
+    background: var(--primary-color);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: white;
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: white;
+}
+
+.sidebar .menu-bar {
+    /*background-color: red;*/
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.menu-bar .text {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.menu-bar .mode {
+    position: relative;
+    border-radius: 10px;
+    background: var(--primary-color-light)
+}
+
+.menu-bar .mode .moon-sun {
+    border-radius: 10px;
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar .mode i{
+    position: absolute;
+    transition: var(--tran-03);
+}
+
+.menu-bar .mode i.sun {
+    opacity: 0;
+}
+
+body.dark .menu-bar .mode i.sun {
+    opacity: 1;
+}
+
+body.dark .menu-bar .mode i.moon {
+    opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 60px;
+    cursor: pointer;
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 44px;
+    border-radius: 25px;
+    background: var(--toggle-color);
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    transition: var(--tran-03);
+    background: var(--sidebar-color)  
+}
+
+body.dark .switch::before {
+    left: 25px;
+}
+
+.home {
+    position: relative;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 88px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+
+.home .text {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 8px 40px;
+}
+
+.sidebar.close ~ .home {
+    left: 88px;
+    width: calc(100% - 88px);
+}
